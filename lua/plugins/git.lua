@@ -1,3 +1,4 @@
+-- TODO: need more configuration on git icons
 return {
 
   require("gitsigns").setup({

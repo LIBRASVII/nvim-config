@@ -1,5 +1,28 @@
 return {
-  -- auto pairs
+
+  -- TODO: need configuration the keybinds and more
+  -- to persist and toggle multiple terminals during an editing session
+  {
+    -- amongst your other plugins
+    { "akinsho/toggleterm.nvim", version = "*", config = true },
+    -- or
+    {
+      "akinsho/toggleterm.nvim",
+      version = "*",
+      opts = {--[[ things you want to change go here]]
+      },
+    },
+  },
+
+  -- All the lua functions I don't want to write twice.
+  {
+    "nvim-lua/plenary.nvim",
+  },
+  -- adds icons for plugins
+  {
+    "nvim-tree/nvim-web-devicons",
+  },
+  -- auto-pairs
   {
     "echasnovski/mini.pairs",
     event = "VeryLazy",
@@ -99,6 +122,7 @@ return {
     },
   },
   -- metrics, insights, and time tracking automatically generated from your programming activity
+  -- okda
   {
     "wakatime/vim-wakatime",
   },
