@@ -36,11 +36,11 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   -- auto-pairs
-  {
-    "echasnovski/mini.pairs",
-    event = "VeryLazy",
-    opts = {},
-  },
+  -- {
+  --   "echasnovski/mini.pairs",
+  --   event = "VeryLazy",
+  --   opts = {},
+  -- },
   -- auto completion
   {
     "hrsh7th/nvim-cmp",

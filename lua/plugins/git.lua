@@ -1,4 +1,5 @@
 -- TODO: need more configuration on git icons
+-- WARN: error on setup
 return {
 
   require("gitsigns").setup({

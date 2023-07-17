@@ -47,17 +47,17 @@ require("lazy").setup({
   },
 })
 
-require("toggleterm").setup()
+-- require("toggleterm").setup()
 
--- TODO: need more configuration
+-- -- TODO: need more configuration
 require("catppuccin").setup({
 
   flavour = "frappe", -- latte, frappe, macchiato, mocha
   background = { -- :h background
     light = "latte",
     dark = "mocha",
+    -- background_colour = "#11ffee00",
   },
-  background_colour = " ",
   transparent_background = true, -- disables setting the background color.
   show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
   term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
@@ -73,11 +73,11 @@ require("catppuccin").setup({
     comments = { "italic" }, -- Change the style of comments
     conditionals = { "italic" },
     loops = {},
-    functions = {},
+    functions = { "italic" },
     keywords = {},
     strings = {},
     variables = {},
-    numbers = {},
+    numbers = { "underline" },
     booleans = {},
     properties = {},
     types = {},
@@ -97,4 +97,4 @@ require("catppuccin").setup({
 })
 
 -- setup must be called before loading
-vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("catppuccin-frappe")
