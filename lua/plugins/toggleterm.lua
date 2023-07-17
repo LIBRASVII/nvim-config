@@ -1,4 +1,18 @@
---TODO: no finish yet
+-- TODO: this is not working proprely
+
+if true then
+  return {}
+end
+
+local toggleterm = require("toggleterm")
+
+toggleterm.setup({
+  size = 20,
+  open_mapping = [[<c-/>]],
+  direction = "float",
+})
+
+--TODO: not finished yet
 function _G.set_terminal_keymaps()
   local opts = { buffer = 0 }
   vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)

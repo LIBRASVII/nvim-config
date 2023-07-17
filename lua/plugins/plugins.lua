@@ -9,9 +9,22 @@ return {
     {
       "akinsho/toggleterm.nvim",
       version = "*",
+      -- require("toggleterm")({
       opts = {--[[ things you want to change go here]]
       },
+      -- }),
     },
+  },
+  -- colorschema
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+  },
+  --  comments
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    lazy = true,
   },
 
   -- All the lua functions I don't want to write twice.
