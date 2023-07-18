@@ -7,6 +7,7 @@ return {
     opts = {
       function(_, opts)
         table.insert(opts.ensure_installed, "prettierd")
+        vim.list_extend(opts.ensure_installed, { "codelldb" }) -- Ensure Rust debugger is installed
       end, },
   },
 }

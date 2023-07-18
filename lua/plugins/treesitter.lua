@@ -14,7 +14,7 @@ return {
             -- In case other textobject modules are enabled, we will load them
             -- once nvim-treesitter is loaded
             require("lazy.core.loader").disable_rtp_plugin("nvim-treesitter-textobjects")
-            local load_textobjects = true
+            -- local load_textobjects = true -- this variable is not used
           end,
         },
       },
@@ -92,6 +92,7 @@ return {
     opts = function(_, opts)
       if type(opts.ensure_installed) == "table" then
         vim.list_extend(opts.ensure_installed, { "c", "cpp" })
+        vim.list_extend(opts.ensure_installed, { "ron", "rust", "toml" })
       end
     end,
   },

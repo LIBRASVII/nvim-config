@@ -9,6 +9,25 @@ return {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "saadparwaiz1/cmp_luasnip",
+      -- Extend auto completion for rust
+      {
+        "Saecki/crates.nvim",
+        event = { "BufRead Cargo.toml" },
+        config = true,
+        sources = {
+          { name = "path" },
+          { name = "buffer" },
+          { name = "nvim_lsp" },
+          { name = "crates" },
+        },
+      },
+      ---@param opts cmp.ConfigSchema
+      opts = function(_, opts)
+        local cmp = require("cmp")
+        opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {
+          { name = "crates" },
+        }))
+      end,
     },
     opts = function()
       vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
@@ -59,5 +78,5 @@ return {
         sorting = defaults.sorting,
       }
     end,
-  }
+  },
 }
