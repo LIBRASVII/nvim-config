@@ -60,6 +60,10 @@ return {
           { name = "luasnip" },
           { name = "buffer" },
           { name = "path" },
+          { name = "git" },
+          { name = "omni" },
+          { name = "color_names" },
+          { name = "calc" },
         }),
         formatting = {
           format = function(_, item)
