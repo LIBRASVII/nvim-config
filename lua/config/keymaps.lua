@@ -97,8 +97,6 @@ vim.keymap.set('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
 vim.keymap.set('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
 -- Wipeout buffer
 --                 :BufferWipeout
--- Close commands
---                 :BufferCloseAllButCurrent
 --                 :BufferCloseAllButPinned
 --                 :BufferCloseAllButCurrentOrPinned
 --                 :BufferCloseBuffersLeft
