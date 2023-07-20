@@ -1,4 +1,3 @@
--- WARN: return a error
 return {
   {
     "mfussenegger/nvim-dap",

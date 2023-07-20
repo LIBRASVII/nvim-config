@@ -1,4 +1,17 @@
 return {
+  -- proeject management
+  {
+    "ahmedkhalf/project.nvim",
+    opts = {},
+    event = "VeryLazy",
+    config = function(_, opts)
+      require("project_nvim").setup(opts)
+      require("telescope").load_extension("projects")
+    end,
+    keys = {
+      { "<leader>fp", "<Cmd>Telescope projects<CR>", desc = "Projects" },
+    },
+  },
   -- preview markdown in the browser
   {
     "iamcco/markdown-preview.nvim",
@@ -8,39 +21,43 @@ return {
       vim.g.mkdp_auto_start = 1
     end,
   },
+  --  a tabline plugin with re-orderable, auto-sizing, clickable tabs, icons, nice highlighting,
+  --  sort-by commands and a magic jump-to-buffer mode.
   {
-    'romgrk/barbar.nvim',
+    "romgrk/barbar.nvim",
     dependencies = {
-      'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
-      'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+      "lewis6991/gitsigns.nvim",     -- OPTIONAL: for git status
+      "nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
     },
-    init = function() vim.g.barbar_auto_setup = false end,
+    init = function()
+      vim.g.barbar_auto_setup = false
+    end,
     opts = {
       -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
       animation = true,
       -- insert_at_start = true,
       -- …etc.
     },
-    version = '^1.0.0', -- optional: only update when a new 1.x version is released
+    version = "^1.0.0", -- optional: only update when a new 1.x version is released
   },
   -- previewing goto definition calls
   {
     "rmagatti/goto-preview",
     config = function()
-      require('goto-preview').setup {
+      require("goto-preview").setup({
         width = 120,              -- Width of the floating window
         height = 25,              -- Height of the floating window
         default_mappings = false, -- Bind default mappings
         debug = false,            -- Print debug information
         opacity = nil,            -- 0-100 opacity level of the floating window where 100 is fully transparent.
-        post_open_hook = nil      -- A function taking two arguments, a buffer and a window to be ran as a hook.
+        post_open_hook = nil,     -- A function taking two arguments, a buffer and a window to be ran as a hook.
         -- You can use "default_mappings = true" setup option
         -- Or explicitly set keybindings
         -- vim.cmd("nnoremap gpd <cmd>lua require('goto-preview').goto_preview_definition()<CR>")
         -- vim.cmd("nnoremap gpi <cmd>lua require('goto-preview').goto_preview_implementation()<CR>")
         -- vim.cmd("nnoremap gP <cmd>lua require('goto-preview').close_all_win()<CR>")
-      }
-    end
+      })
+    end,
   },
   -- TabNine completion engine for hrsh7th/nvim-cmp
   {
@@ -69,7 +86,7 @@ return {
   {
     "romgrk/nvim-treesitter-context",
     config = function()
-      require("treesitter-context").setup {
+      require("treesitter-context").setup({
         enable = true,   -- Enable this plugin (Can be enabled/disabled later via commands)
         throttle = true, -- Throttles plugin updates (may improve performance)
         max_lines = 0,   -- How many lines the window should span. Values <= 0 mean no limit.
@@ -79,13 +96,13 @@ return {
           -- By setting the 'default' entry below, you can control which nodes you want to
           -- appear in the context window.
           default = {
-            'class',
-            'function',
-            'method',
+            "class",
+            "function",
+            "method",
           },
         },
-      }
-    end
+      })
+    end,
   },
   -- autoclose and autorename html tag
   {
@@ -130,7 +147,7 @@ return {
   -- NOTE: not proprely
   -- minimap
   {
-    'wfxr/minimap.vim',
+    "wfxr/minimap.vim",
     build = "cargo install --locked code-minimap",
     cmd = { "Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight" },
     config = function()
@@ -203,11 +220,12 @@ return {
         -- Disabled by default in LazyVim because neo-tree is used for that
         use_as_default_explorer = false,
       },
-    }
+    },
   },
   -- ui components
   {
-    "MunifTanjim/nui.nvim", lazy = true
+    "MunifTanjim/nui.nvim",
+    lazy = true,
   },
   -- lsp symbol navigation for lualine
   {
@@ -325,11 +343,13 @@ return {
 
   -- All the lua functions I don't want to write twice.
   {
-    "nvim-lua/plenary.nvim", lazy = true
+    "nvim-lua/plenary.nvim",
+    lazy = true,
   },
   -- adds icons for plugins
   {
-    "nvim-tree/nvim-web-devicons", lazy = true
+    "nvim-tree/nvim-web-devicons",
+    lazy = true,
   },
   -- -- automatically saving your work whenever you make changes to it
   {
