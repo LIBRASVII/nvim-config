@@ -1,6 +1,29 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    -- Show current function at the top of the screen
+    -- when function does not fit in screen
+    {
+      "romgrk/nvim-treesitter-context",
+      config = function()
+        require("treesitter-context").setup({
+          enable = true,   -- Enable this plugin (Can be enabled/disabled later via commands)
+          throttle = true, -- Throttles plugin updates (may improve performance)
+          max_lines = 0,   -- How many lines the window should span. Values <= 0 mean no limit.
+          patterns = {     -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
+            -- For all filetypes
+            -- Note that setting an entry here replaces all other patterns for this entry.
+            -- By setting the 'default' entry below, you can control which nodes you want to
+            -- appear in the context window.
+            default = {
+              "class",
+              "function",
+              "method",
+            },
+          },
+        })
+      end,
+    },
     {
       "nvim-treesitter/nvim-treesitter",
       version = false, -- last release is way too old and doesn't work on Windows
@@ -72,6 +95,8 @@ return {
           end, opts.ensure_installed)
         end
         require("nvim-treesitter.configs").setup(opts)
+
+        local load_textobjects
 
         if load_textobjects then
           -- PERF: no need to load the plugin, if we only need its queries for mini.ai

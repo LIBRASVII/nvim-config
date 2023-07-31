@@ -6,7 +6,7 @@ require('plugins.ui.notify')
 
 -- TODO: configure the requires below
 require("gitsigns").setup()
-require("plugins.toggleterm")
+-- require("plugins.toggleterm")
 require("mason").setup()
 require("crates").setup()
 

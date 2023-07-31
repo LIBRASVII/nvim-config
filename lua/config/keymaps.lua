@@ -6,27 +6,27 @@
 local crates = require('crates')
 local opts = { silent = true }
 
-vim.keymap.set('n', '<leader>ct', crates.toggle, opts)
-vim.keymap.set('n', '<leader>cr', crates.reload, opts)
+vim.keymap.set('n', '<leader>Ct', crates.toggle, opts)
+vim.keymap.set('n', '<leader>Cr', crates.reload, opts)
 
-vim.keymap.set('n', '<leader>cv', crates.show_versions_popup, opts)
-vim.keymap.set('n', '<leader>cf', crates.show_features_popup, opts)
+vim.keymap.set('n', '<leader>Cv', crates.show_versions_popup, opts)
+vim.keymap.set('n', '<leader>Cf', crates.show_features_popup, opts)
 vim.keymap.set('n', '<leader>cd', crates.show_dependencies_popup, opts)
 
-vim.keymap.set('n', '<leader>cu', crates.update_crate, opts)
-vim.keymap.set('v', '<leader>cu', crates.update_crates, opts)
-vim.keymap.set('n', '<leader>ca', crates.update_all_crates, opts)
-vim.keymap.set('n', '<leader>cU', crates.upgrade_crate, opts)
-vim.keymap.set('v', '<leader>cU', crates.upgrade_crates, opts)
-vim.keymap.set('n', '<leader>cA', crates.upgrade_all_crates, opts)
+vim.keymap.set('n', '<leader>Cu', crates.update_crate, opts)
+vim.keymap.set('v', '<leader>Cu', crates.update_crates, opts)
+vim.keymap.set('n', '<leader>Ca', crates.update_all_crates, opts)
+vim.keymap.set('n', '<leader>CU', crates.upgrade_crate, opts)
+vim.keymap.set('v', '<leader>CU', crates.upgrade_crates, opts)
+vim.keymap.set('n', '<leader>CA', crates.upgrade_all_crates, opts)
 
-vim.keymap.set('n', '<leader>ce', crates.expand_plain_crate_to_inline_table, opts)
-vim.keymap.set('n', '<leader>cE', crates.extract_crate_into_table, opts)
+vim.keymap.set('n', '<leader>Ce', crates.expand_plain_crate_to_inline_table, opts)
+vim.keymap.set('n', '<leader>CE', crates.extract_crate_into_table, opts)
 
-vim.keymap.set('n', '<leader>cH', crates.open_homepage, opts)
-vim.keymap.set('n', '<leader>cR', crates.open_repository, opts)
-vim.keymap.set('n', '<leader>cD', crates.open_documentation, opts)
-vim.keymap.set('n', '<leader>cC', crates.open_crates_io, opts)
+vim.keymap.set('n', '<leader>CH', crates.open_homepage, opts)
+vim.keymap.set('n', '<leader>CR', crates.open_repository, opts)
+vim.keymap.set('n', '<leader>CD', crates.open_documentation, opts)
+vim.keymap.set('n', '<leader>CC', crates.open_crates_io, opts)
 
 -- GIT
 require('gitsigns').setup {
@@ -132,3 +132,14 @@ vim.keymap.set('n', '<leader><leader>h', require('smart-splits').swap_buf_left)
 vim.keymap.set('n', '<leader><leader>j', require('smart-splits').swap_buf_down)
 vim.keymap.set('n', '<leader><leader>k', require('smart-splits').swap_buf_up)
 vim.keymap.set('n', '<leader><leader>l', require('smart-splits').swap_buf_right)
+
+-- DAP
+vim.keymap.set('n', '<F2>', require('dap').up)
+vim.keymap.set('n', '<F3>', require('dap').down)
+vim.keymap.set('n', '<F4>', require('dap').step_into)
+vim.keymap.set('n', '<F6>', require('dap').pause)
+vim.keymap.set('n', '<F8>', require('dap').set_breakpoint)
+vim.keymap.set('n', '<F8>', require('dap').toggle_breakpoint)
+vim.keymap.set('n', '<F9>', require('dap').continue)
+vim.keymap.set('n', '<F9>', require('dap').step_out)
+vim.keymap.set('n', '<F10>', require('dap').step_over)

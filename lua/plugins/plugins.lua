@@ -35,19 +35,19 @@ return {
       },
     },
   },
-  -- proeject management
-  {
-    "ahmedkhalf/project.nvim",
-    opts = {},
-    event = "VeryLazy",
-    config = function(_, opts)
-      require("project_nvim").setup(opts)
-      require("telescope").load_extension("projects")
-    end,
-    keys = {
-      { "<leader>fp", "<Cmd>Telescope projects<CR>", desc = "Projects" },
-    },
-  },
+  -- -- proeject management
+  -- {
+  --   "ahmedkhalf/project.nvim",
+  --   opts = {},
+  --   event = "VeryLazy",
+  --   config = function(_, opts)
+  --     require("project_nvim").setup(opts)
+  --     require("telescope").load_extension("projects")
+  --   end,
+  --   keys = {
+  --     { "<leader>fp", "<Cmd>Telescope projects<CR>", desc = "Projects" },
+  --   },
+  -- },
   -- preview markdown in the browser
   {
     "iamcco/markdown-preview.nvim",
@@ -114,29 +114,6 @@ return {
         hsl_fn = true,   -- CSS hsl() and hsla() functions
         css = true,      -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
         css_fn = true,   -- Enable all CSS *functions*: rgb_fn, hsl_fn
-      })
-    end,
-  },
-  -- Show current function at the top of the screen
-  -- when function does not fit in screen
-  {
-    "romgrk/nvim-treesitter-context",
-    config = function()
-      require("treesitter-context").setup({
-        enable = true,   -- Enable this plugin (Can be enabled/disabled later via commands)
-        throttle = true, -- Throttles plugin updates (may improve performance)
-        max_lines = 0,   -- How many lines the window should span. Values <= 0 mean no limit.
-        patterns = {     -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
-          -- For all filetypes
-          -- Note that setting an entry here replaces all other patterns for this entry.
-          -- By setting the 'default' entry below, you can control which nodes you want to
-          -- appear in the context window.
-          default = {
-            "class",
-            "function",
-            "method",
-          },
-        },
       })
     end,
   },
@@ -347,12 +324,6 @@ return {
     --   opts = { --[[ things you want to change go here]]
     --   },
     -- }),
-  },
-  -- colorschema
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
   },
   --  comments
   {
