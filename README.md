@@ -12,7 +12,7 @@
 - [x] Error on transparent background, have notification of error.
 - [x] Configuration on notify plugin
 - [x] Colorsheme modify configuration
-- [ ] Toggleterm error on call plugin
+- [x] Toggleterm error on call plugin
 - [ ] Keybind **w** to save, has ambiguous bind
 - [ ] Project.nvim overriding 
 - [ ] Nvim-dap-ui overriding
