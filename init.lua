@@ -1,8 +1,12 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
+
+-- NOTE: working proprely
+require('plugins.ui.notify')
+
+-- TODO: configure the requires below
 require("gitsigns").setup()
--- require("catppuccin").setup()
-require("toggleterm").setup()
+require("plugins.toggleterm")
 require("mason").setup()
 require("crates").setup()
 
@@ -27,3 +31,5 @@ local function show_documentation()
 end
 
 vim.keymap.set("n", "K", show_documentation, { silent = true })
+
+vim.cmd.colorscheme "catppuccin-frappe"

@@ -1,4 +1,40 @@
 return {
+  -- for java
+  { "mfussenegger/nvim-jdtls", ft = { "java" } },
+  --  This is what powers LazyVim's fancy-looking tabs,
+  --  which include filetype icons and close buttons.
+  {
+    "akinsho/bufferline.nvim",
+    event = "VeryLazy",
+    keys = {
+      { "<leader>bp", "<Cmd>BufferLineTogglePin<CR>",            desc = "Toggle pin" },
+      { "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete non-pinned buffers" },
+    },
+    opts = {
+      options = {
+        -- stylua: ignore
+        close_command = function(n) require("mini.bufremove").delete(n, false) end,
+        -- stylua: ignore
+        right_mouse_command = function(n) require("mini.bufremove").delete(n, false) end,
+        diagnostics = "nvim_lsp",
+        always_show_bufferline = false,
+        diagnostics_indicator = function(_, _, diag)
+          local icons = require("lazyvim.config").icons.diagnostics
+          local ret = (diag.error and icons.Error .. diag.error .. " " or "")
+              .. (diag.warning and icons.Warn .. diag.warning or "")
+          return vim.trim(ret)
+        end,
+        offsets = {
+          {
+            filetype = "neo-tree",
+            text = "Neo-tree",
+            highlight = "Directory",
+            text_align = "left",
+          },
+        },
+      },
+    },
+  },
   -- proeject management
   {
     "ahmedkhalf/project.nvim",
@@ -70,7 +106,7 @@ return {
   {
     "norcalli/nvim-colorizer.lua",
     config = function()
-      require("colorizer").setup({ "css", "scss", "html", "javascript" }, {
+      require("colorizer").setup({ "css", "scss", "html", "javascript", "lua" }, {
         RGB = true,      -- #RGB hex codes
         RRGGBB = true,   -- #RRGGBB hex codes
         RRGGBBAA = true, -- #RRGGBBAA hex codes
@@ -142,18 +178,6 @@ return {
           },
         },
       })
-    end,
-  },
-  -- NOTE: not proprely
-  -- minimap
-  {
-    "wfxr/minimap.vim",
-    build = "cargo install --locked code-minimap",
-    cmd = { "Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight" },
-    config = function()
-      vim.cmd("let g:minimap_width = 10")
-      vim.cmd("let g:minimap_auto_start = 1")
-      vim.cmd("let g:minimap_auto_start_win_enter = 1")
     end,
   },
   -- A framework for interacting with tests within NeoVim
@@ -317,17 +341,12 @@ return {
   -- TODO: need configuration the keybinds and more
   -- to persist and toggle multiple terminals during an editing session
   {
-    -- amongst your other plugins
-    { "akinsho/toggleterm.nvim", version = "*", config = true },
-    -- or
-    {
-      "akinsho/toggleterm.nvim",
-      version = "*",
-      -- require("toggleterm")({
-      opts = { --[[ things you want to change go here]]
-      },
-      -- }),
-    },
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    -- require("toggleterm")({
+    --   opts = { --[[ things you want to change go here]]
+    --   },
+    -- }),
   },
   -- colorschema
   {
@@ -352,12 +371,12 @@ return {
     lazy = true,
   },
   -- -- automatically saving your work whenever you make changes to it
-  {
-    "Pocco81/auto-save.nvim",
-    config = function()
-      require("auto-save").setup()
-    end,
-  },
+  -- {
+  --   "Pocco81/auto-save.nvim",
+  --   config = function()
+  --     require("auto-save").setup()
+  --   end,
+  -- },
 
   -- snippets/Friendly Snippets
   {
