@@ -2,10 +2,10 @@
 
 #### This is my personal configuration of nvim :alien:
 
-![Nvim Startup!](/home/lage/Pictures/2023-07-31_17-34.png)
+![Nvim Startup!](http://localhost:8382/_local_image_%2Fhome%2Flage%2FPictures%2F2023-07-31_17-34.png)
 ***Neovim** startup* :star:
 
-![Rust debug!](/home/lage/Pictures/mainrs_debug.png)
+![Rust debug!](http://localhost:8382/_local_image_%2Fhome%2Flage%2FPictures%2Fmainrs_debug.png)
 ***Rust*** debug config :gem:
 
 ###### *TODO*
