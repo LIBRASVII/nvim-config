@@ -2,9 +2,16 @@
 
 #### This is my personal configuration of nvim :alien:
 
+![Nvim Startup!](/home/lage/Pictures/2023-07-31_17-34.png)
+***Neovim** startup* :star:
+
+![Rust debug!](/home/lage/Pictures/mainrs_debug.png)
+***Rust*** debug config :gem:
+
 ###### *TODO*
 
-- [x] Add and change keybinds for Gitsigns and barbar.nvim 
+- [x] Add and change keybinds for Gitsigns 
+- [x] Add keymap to barbar.nvim 
 - [x] Add keymaps to crates  
 - [x] Change in the configuration files, make more readable
 - [x] Gitsigns prompt error on git project is open.

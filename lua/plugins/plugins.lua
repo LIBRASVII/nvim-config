@@ -1,4 +1,6 @@
 return {
+  { "catppuccin/nvim",         name = "catppuccin-frappe", priority = 1000 },
+
   -- for java
   { "mfussenegger/nvim-jdtls", ft = { "java" } },
   --  This is what powers LazyVim's fancy-looking tabs,
@@ -314,17 +316,6 @@ return {
   {
     "mrjones2014/smart-splits.nvim",
   },
-
-  -- TODO: need configuration the keybinds and more
-  -- to persist and toggle multiple terminals during an editing session
-  {
-    "akinsho/toggleterm.nvim",
-    version = "*",
-    -- require("toggleterm")({
-    --   opts = { --[[ things you want to change go here]]
-    --   },
-    -- }),
-  },
   --  comments
   {
     "JoosepAlviste/nvim-ts-context-commentstring",
@@ -341,13 +332,6 @@ return {
     "nvim-tree/nvim-web-devicons",
     lazy = true,
   },
-  -- -- automatically saving your work whenever you make changes to it
-  -- {
-  --   "Pocco81/auto-save.nvim",
-  --   config = function()
-  --     require("auto-save").setup()
-  --   end,
-  -- },
 
   -- snippets/Friendly Snippets
   {
