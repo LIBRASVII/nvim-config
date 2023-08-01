@@ -1,20 +1,20 @@
 # nvim-config
 
-#### This is my personal configuration of nvim :alien:
+#### This is my configuration of nvim :brazil:
 
-![Nvim Startup!]()
+![Nvim Startup!](img/nvim_starup1.png)
 ***Neovim** startup* :star:
 
-![Rust debug!]()
-***Rust*** debug config :gem:
+![Rust debug!](img/mainrs_debug.png)
+***Rust*** debug config :spades:
 
 ###### *TODO*
 
-- [x] Add and change keybinds for Gitsigns 
+- [x] Add and change key binds for Gitsigns 
 - [x] Add keymap to barbar.nvim 
 - [x] Add keymaps to crates  
-- [x] Change in the configuration files, make more readable
-- [x] Gitsigns prompt error on git project is open.
+- [x] Change in the configuration files, make them more readable
+- [x] Gitsigns prompt error on the git project is open.
 - [x] Error call back of script or plugin.
 - [x] Error on transparent background, have notification of error.
 - [x] Configuration on notify plugin
